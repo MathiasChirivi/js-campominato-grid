@@ -7,20 +7,62 @@
 
 const container = document.getElementById("containerMain");
 const btnstart = document.getElementById("start");
+const livello = document.getElementById("selectDifficulty");
 
 
-btnstart.addEventListener(`click`, function(){
-    for (let i = 1; i <= 100; i++) {
+btnstart.addEventListener("click", function(){
+    var selezionaLivello = livello.value; 
+    console.log("Il livello scelto è", selezionaLivello);
 
-        //creamo un quadrato contenitore
-        const squareDiv = document.createElement("div");
-        squareDiv.classList.add("square");
-        squareDiv.innerHTML = i;
+    container.innerHTML = '';
+    
+    if (livello.value == "hard") {
         
-        squareDiv.addEventListener(`click`, function(){
-            this.classList.toggle("clicked");
-            console.log(`Hai appena cliccato il : ${i}`)
-        })
-        container.appendChild(squareDiv);
-    }
-})
+        for (let i = 1; i <= 100; i++) {
+            
+            //creamo un quadrato contenitore
+            const squareDiv = document.createElement("div");
+            squareDiv.classList.add("squareHard");
+            squareDiv.innerHTML = i;
+            
+            squareDiv.addEventListener(`click`, function(){
+                this.classList.toggle("clicked");
+                console.log(`Hai appena cliccato il : ${i}`)
+            })
+            container.appendChild(squareDiv);
+        }
+
+} else if (livello.value == "normal") {
+
+        for (let i = 1; i <= 81; i++) {
+            
+            //creamo un quadrato contenitore
+            const squareDiv = document.createElement("div");
+            squareDiv.classList.add("squareNormal");
+            squareDiv.innerHTML = i;
+            
+            squareDiv.addEventListener(`click`, function(){
+                this.classList.toggle("clicked");
+                console.log(`Hai appena cliccato il : ${i}`)
+            })
+            container.appendChild(squareDiv);
+        }
+  
+} else {
+        for (let i = 1; i <= 49; i++) {
+                
+            //creamo un quadrato contenitore
+            const squareDiv = document.createElement("div");
+            squareDiv.classList.add("squareEasy");
+            squareDiv.innerHTML = i;
+            
+            squareDiv.addEventListener(`click`, function(){
+                this.classList.toggle("clicked");
+                console.log(`Hai appena cliccato il : ${i}`)
+            })
+            container.appendChild(squareDiv);
+        }
+}
+});
+
+

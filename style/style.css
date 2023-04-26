@@ -36,13 +36,43 @@ body{
     margin: 0 auto;
     border: 2px solid white;
 }
-.square {
+
+.square{
+    border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.squareHard {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgb(154, 54, 54);
     width: calc(100%/10);
     height: calc(100%/10);
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.squareNormal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(154, 54, 54);
+    width: calc(100%/9);
+    height: calc(100%/9);
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.squareEasy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(154, 54, 54);
+    width: calc(100%/7);
+    height: calc(100%/7);
     border: 1px solid black;
     cursor: pointer;
 }
