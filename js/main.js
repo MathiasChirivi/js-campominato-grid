@@ -8,17 +8,19 @@
 const container = document.getElementById("containerMain");
 const btnstart = document.getElementById("start");
 
+
 btnstart.addEventListener(`click`, function(){
-    for (let i = 0; i < 100; i++) {
+    for (let i = 1; i <= 100; i++) {
 
         //creamo un quadrato contenitore
         const squareDiv = document.createElement("div");
         squareDiv.classList.add("square");
-        squareDiv.innerHTML = i+1;
+        squareDiv.innerHTML = i;
+        
+        squareDiv.addEventListener(`click`, function(){
+            this.classList.toggle("clicked");
+            console.log(`Hai appena cliccato il : ${i}`)
+        })
+        container.appendChild(squareDiv);
     }
-
-    //squareDiv.addEventListener(`click`, function(){
-    //    this.classList.toggle("clicked")
-    //})
-    container.appendChild(squareDiv);
 })
